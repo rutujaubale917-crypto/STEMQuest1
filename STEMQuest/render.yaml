@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: stemquest-backend
+    env: python
+    repo: https://github.com/rutujaubale917-crypto/STEMQuest1
+    rootDir: backend
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: MONGODB_URL
+        value: mongodb+srv://rutuja:iEupjyCJnbOmb59K@cluster0.pknafbc.mongodb.net/stemquest?retryWrites=true&w=majority
+      - key: DATABASE_NAME
+        value: stemquest
+      - key: SECRET_KEY
+        generateValue: true
+      - key: ALGORITHM
+        value: HS256
