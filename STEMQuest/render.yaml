@@ -3,7 +3,7 @@ services:
     name: stemquest-backend
     env: python
     repo: https://github.com/rutujaubale917-crypto/STEMQuest1
-    rootDir: backend
+    rootDir: STEMQuest/backend
     buildCommand: "pip install -r requirements.txt"
     startCommand: "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
     envVars:
